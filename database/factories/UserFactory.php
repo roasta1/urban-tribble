@@ -24,11 +24,12 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'login' => fake()->name(10),
-            'fio' => fake()->realText(20),
+            'login' => fake()->name(),
+            'fio' => fake()->firstName().' '.fake()->lastName(),
             'phone' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
-            'password' => '1111',
+            'password' => 1111,
+
         ];
     }
 
